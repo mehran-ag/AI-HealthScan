@@ -4,8 +4,3 @@ This AI code uses K-Nearest Neighbour method to decide the status of a patient b
 Symptoms are categorized into "0-No symptoms", "1-Mild", "2-Moderate", and "3-Severe".
 Based on the patient's condition, the corresponding number to the symptoms severity must be entered into the AI code.
 According to the entered conditions, one of the four different cases of "Healthy", "COVID", "Flu", and "Emergency condition" will be assigned to a patient.
-
-
-
-To run the AI code, copy and paste both python and CSV files to a directory and run the code using an IDE like Pycharm.
-Running the code, you will be asked to enter your health conditions based on the guideline provided and you will get the conclusion on your health status.

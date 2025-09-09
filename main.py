@@ -7,28 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.neighbors import KNeighborsClassifier
 
 
-class KNN:
-    k = 3
-
-    def __init__(self, k=3) -> None:
-        self.k = k
-
-    def fit(self, x, y):
-        self.x_train = x
-        self.y_train = y
-
-        pass
-
-    def predict(self, xx):
-        predict_labels = [self._predict() for x in xx]
-        return np.array(predict_labels)
-
-    def _predict(self, x):
-        pass
-
-df = pd.read_csv("Medical Data.csv")
+df = pd.read_csv("Data/Medical Data.csv")
 
 cols = df.columns
 
@@ -46,21 +28,11 @@ yy = df["Label"].tolist()
 
 x1, x2, y1, y2 = train_test_split(xx, yy, test_size=0.3)
 
-from sklearn.neighbors import KNeighborsClassifier
-
 knn = KNeighborsClassifier(n_neighbors=4)
 
 models = knn.fit(x1, y1)
 
 ym = knn.predict(x2)
-
-n = len(ym)
-for i in range(n):
-    if ym[i] != y2[i]:
-        print(f"Model: {ym[i]} and Real: {y2[i]} Result={ym[i] == y2[i]}")
-
-cfm = confusion_matrix(y2, ym, labels=knn.classes_)
-print(cfm)
 
 while True:
 
